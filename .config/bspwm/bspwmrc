@@ -1,9 +1,10 @@
 #! /bin/sh
 
 sxhkd &
-sh /home/opendata/rgb/coloursync.sh &
+feh --bg-fill /home/opendata/Wallpapers/main.png &
 polybar example &
-compton -b --config ~/.config/compton.conf & 
+compton -b --config ~/.config/compton.conf &
+/home/opendata/.config/bspwm/border &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
@@ -14,8 +15,9 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
-bspc config active_border_color \#2F343F
-bspc config normal_border_color \#383C4A
+bspc config active_border_color \#336699
+bspc config normal_border_color \#336699
+bspc config focused_border_color \#336699
 
 bspc rule -a Gimp desktop=^8 follow=on state=floating
 bspc rule -a Hexchat desktop=^10

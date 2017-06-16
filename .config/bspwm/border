@@ -1,0 +1,15 @@
+#!/bin/bash
+width_focused=2
+width_unfocused=0
+
+ID=$(bspc query -N -n)
+while true; do
+    IDnew=$(bspc query -N -n)
+    if [ "$ID" != "$IDnew" ]
+    then
+	bspc config -n $ID border_width 0
+        bspc config -n focused border_width 2
+        ID=$IDnew
+    fi
+done
+
